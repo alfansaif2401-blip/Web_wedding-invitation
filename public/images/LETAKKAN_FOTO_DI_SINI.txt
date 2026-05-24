@@ -1,0 +1,10 @@
+Letakkan file-file gambar berikut di folder ini:
+
+- profile.jpg   → Foto bersama Intan & Irfan (ukuran ideal: 800x1000px)
+- photo1.jpg    → Foto prewedding 1
+- photo2.jpg    → Foto prewedding 2
+- photo3.jpg    → Foto prewedding 3
+- photo4.jpg    → Foto prewedding 4
+
+Format yang didukung: .jpg, .jpeg, .png, .webp
+Ukuran yang direkomendasikan: minimal 800px lebar, max 2MB per foto

@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Pinyon+Script&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ──────────────────────────────────────────────────── */
+/* ROOT & SCROLLBAR                                      */
+/* ──────────────────────────────────────────────────── */
+:root {
+  --gold: #D4AF37;
+  --gold-light: #FFE066;
+  --gold-dark: #9B7B1B;
+  --crimson: #8B0000;
+  --crimson-light: #C8102E;
+  --crimson-dark: #4A0000;
+  --ivory: #F5E6C8;
+  --ivory-dark: #E8D5A3;
+  --bg-deep: #0a0500;
+  --bg-card: rgba(26, 10, 0, 0.95);
+  --text-primary: #e8d5b0;
+  --text-muted: rgba(232, 213, 176, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0500;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.4);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.7);
+}
+
+/* ──────────────────────────────────────────────────── */
+/* LUXURY BACKGROUND                                    */
+/* ──────────────────────────────────────────────────── */
+.luxury-bg {
+  background-color: var(--bg-deep);
+  background-image:
+    radial-gradient(ellipse at 15% 30%, rgba(139, 0, 0, 0.09) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 70%, rgba(212, 175, 55, 0.06) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 100%, rgba(139, 0, 0, 0.06) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.025'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* ──────────────────────────────────────────────────── */
+/* SECTION CARDS                                        */
+/* ──────────────────────────────────────────────────── */
+.section-card {
+  background: linear-gradient(160deg, rgba(26, 10, 0, 0.96) 0%, rgba(10, 5, 0, 0.99) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at top center, rgba(212, 175, 55, 0.035) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.section-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.4), transparent);
+  pointer-events: none;
+}
+
+/* ──────────────────────────────────────────────────── */
+/* CARD FLIP (3D)                                       */
+/* ──────────────────────────────────────────────────── */
+.card-scene {
+  perspective: 700px;
+}
+
+.card-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card-face {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* ──────────────────────────────────────────────────── */
+/* ENVELOPE 3D                                          */
+/* ──────────────────────────────────────────────────── */
+.envelope-scene {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+/* ──────────────────────────────────────────────────── */
+/* GOLD GLOW PULSE                                      */
+/* ──────────────────────────────────────────────────── */
+@keyframes goldGlow {
+  0%, 100% {
+    box-shadow: 0 0 8px 2px rgba(212, 175, 55, 0.5), 0 0 16px 4px rgba(139, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px 8px rgba(212, 175, 55, 0.85), 0 0 40px 14px rgba(139, 0, 0, 0.55);
+  }
+}
+
+.gold-glow {
+  animation: goldGlow 2s ease-in-out infinite;
+}
+
+/* ──────────────────────────────────────────────────── */
+/* PARTICLE FLOAT                                       */
+/* ──────────────────────────────────────────────────── */
+@keyframes particleFloat {
+  0% { opacity: 0; transform: translateY(0) scale(0); }
+  30% { opacity: 0.8; }
+  100% { opacity: 0; transform: translateY(-80px) scale(1.2); }
+}
+
+/* ──────────────────────────────────────────────────── */
+/* TYPOGRAPHY UTILITIES                                 */
+/* ──────────────────────────────────────────────────── */
+.font-cormorant { font-family: 'Cormorant Garamond', Georgia, serif; }
+.font-garamond  { font-family: 'EB Garamond', Georgia, serif; }
+.font-pinyon    { font-family: 'Pinyon Script', cursive; }
+
+.text-gold       { color: var(--gold); }
+.text-gold-light { color: var(--gold-light); }
+.text-ivory      { color: var(--ivory); }
+.text-ivory-muted{ color: var(--text-muted); }

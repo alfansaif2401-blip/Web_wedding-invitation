@@ -1,0 +1,15 @@
+Letakkan file audio berikut di folder ini:
+
+- "Yiruma, River Flows in You.mp3"
+
+PENTING: Nama file harus PERSIS sama termasuk spasi dan koma.
+Format: MP3
+Ukuran: Tidak ada batasan, tetapi disarankan di bawah 10MB untuk performa web.
+
+Cara mendapatkan file:
+1. Download dari YouTube menggunakan tool seperti yt-dlp
+2. Atau ganti nama file MP3 Anda menjadi: Yiruma, River Flows in You.mp3
+
+Jika ingin mengganti nama audio, edit baris ini di app/page.tsx:
+  audioSrc: '/audio/Yiruma, River Flows in You.mp3',
+Ganti dengan nama file Anda.
